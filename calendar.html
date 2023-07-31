@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>カレンダー</title>
+    <link rel="icon" href="dragonball.png">
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+    <script src="calendar.js"></script>
+    <div class="wrapper">
+        <!-- xxxx年xx月を表示 -->
+        <h1 id="header"></h1>
+    
+        <!-- ボタンクリックで月移動 -->
+        <div id="next-prev-button">
+            <button id="prev" onclick="prev()">‹‹</button>
+            <button id="next" onclick="next()">››</button>
+            <button id="today" onclick="goToToday()">‹‹ 今日</button>            
+        </div>
+    
+        <!-- カレンダー -->
+        <div id="calendar"></div>
+    </div>
+    <script src="calendar.js"></script>
+    <script>
+        // 日付をクリックしたときのイベントリスナーを追加
+        document.addEventListener("click", function(event) {
+            var clickedElement = event.target;
+            if (clickedElement.classList.contains("day")) {
+                var clickedDate = parseInt(clickedElement.textContent, 10);
+                showAlert(clickedDate);
+            }
+        });
+    </script>
+</body>
+</html>
+
