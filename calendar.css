@@ -1,0 +1,129 @@
+@charset "utf-8";
+
+/*全体*/
+.wrapper{
+    max-width: 600px;
+    margin: 0 auto;
+    color: #666;
+}
+#header {
+    text-align: center;
+    font-size: 24px;
+    width: 100%;
+    margin: 1rem 0 0;
+}
+
+/*カレンダー*/
+#calendar {
+    text-align: center;
+    width: 100%;
+}
+table {
+    outline: 2px solid #ddd;
+    border-collapse: collapse;
+    width: 100%;
+}
+th {
+    color: #000;
+}
+th, td {
+    outline: 1px solid #ddd;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+/*日曜日*/
+td:first-child {
+    color: red;
+}
+/*土曜日*/
+td:last-child {
+    color: blue;
+}
+/*前後月の日付*/
+td.disabled {
+    color: #ccc;
+}
+/*本日
+td.today {
+    background-color: #D65E72;
+    color: #fff;
+}*/
+/* 今日の日付のスタイル */
+td.today {
+    position: relative;
+    color: #fff;
+}
+
+td.today:before {
+    content: ""; /* マルの文字を追加 */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #D65E72; /* マルの色を指定 */
+    z-index: -1; /* マルを背景よりも奥に配置 */
+}
+
+td.today span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #fff; /* 数字の色を指定 */
+}
+/*ボタン*/
+#next-prev-button {
+    position: relative;
+}
+#next-prev-button button{
+    cursor: pointer;
+    background: #888888	;
+    color: #fff;
+    border: 1px solid #888888	;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    margin: 1rem 0;
+}
+#next-prev-button button:hover{
+    background-color: #888888	;
+    border-color: #888888	;
+}
+#prev {
+    float: left;
+}
+#next {
+    float: right;
+}
+/* 日本語の曜日に対するスタイル */
+th.dayOfWeek {
+    background-color: #FFFFE0; /* 薄い黄色の背景色 */
+    /* その他のスタイルを追加 */
+}
+
+/* 日の文字を赤にする */
+th.dayOfWeek:first-child {
+  color: red;
+}
+
+/* 土の文字を青にする */
+th.dayOfWeek:last-child {
+  color: blue;
+}
+
+/* ボタン */
+#next-prev-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 今日に戻るボタン */
+#next-prev-button #today {
+    margin-left: 333px; /* この行を修正してボタンを右側に移動 */
+}
